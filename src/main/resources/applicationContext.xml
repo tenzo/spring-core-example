@@ -8,8 +8,32 @@
 
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
-    <bean id="helloWorldService"
-          class="pl.sdacademy.spring.beans.HelloWorldService">
-        <property name="name" value="Students" />
+    <bean id="collectionBean"
+          class="pl.sdacademy.spring.beans.CollectionsBean">
+        <property name = "names">
+            <list>
+                <value>Paul</value>
+                <value>Jessica</value>
+                <value>Philip</value>
+            </list>
+        </property>
+
+        <property name = "countries">
+            <set>
+                <value>Chine</value>
+                <value>Poland</value>
+                <value>USA</value>
+                <value>France</value>
+            </set>
+        </property>
+
+        <property name = "scores">
+            <map>
+                <entry key = "admin9" value = "0"/>
+                <entry key = "prokox" value = "99"/>
+                <entry key = "john32" value = "12"/>
+                <entry key = "eliza77" value = "78"/>
+            </map>
+        </property>
     </bean>
 </beans>
