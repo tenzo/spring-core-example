@@ -8,8 +8,26 @@
 
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
-    <bean id="helloWorldService"
-          class="pl.sdacademy.spring.beans.HelloWorldService">
-        <property name="name" value="Students" />
+    <bean id="userRepository"
+          class="pl.sdacademy.spring.beans.UserRepository">
+        <property name="dbAddress" value="localhost" />
+        <property name="timeZone" value="PL" />
     </bean>
+
+    <bean id="cachingUserRepository"
+          class="pl.sdacademy.spring.beans.CachingUserRepository" parent="userRepository">
+        <property name="cachingStrategy" value="valueMapCache" />
+    </bean>
+
+    <bean id="userRepositoryTemplate" abstract = "true">
+        <property name="dbAddress" value="localhost" />
+        <property name="timeZone" value="PL" />
+        <property name="cachingStrategy" value="nocache" />
+    </bean>
+
+    <bean id="externalCachingUserRepository"
+          class="pl.sdacademy.spring.beans.CachingUserRepository" parent="userRepositoryTemplate">
+        <property name="dbAddress" value="usersrepo.com" />
+    </bean>
+
 </beans>

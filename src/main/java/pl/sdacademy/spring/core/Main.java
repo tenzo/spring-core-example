@@ -2,7 +2,8 @@ package pl.sdacademy.spring.core;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.sdacademy.spring.beans.HelloWorldService;
+import pl.sdacademy.spring.beans.CachingUserRepository;
+import pl.sdacademy.spring.beans.UserRepository;
 
 public class Main {
 
@@ -11,14 +12,15 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        HelloWorldService service = (HelloWorldService) context
-                .getBean("helloWorldService");
-        String message = service.sayHello();
-        System.out.println(message);
+        UserRepository userRepository = context.getBean("userRepository", UserRepository.class);
+        System.out.println(userRepository);
 
-        service.setName("Spring");
-        message = service.sayHello();
-        System.out.println(message);
+        CachingUserRepository cachingUserRepository = context.getBean("cachingUserRepository", CachingUserRepository.class);
+        System.out.println(cachingUserRepository);
+
+        cachingUserRepository = context.getBean("externalCachingUserRepository", CachingUserRepository.class);
+        System.out.println(cachingUserRepository);
+
     }
 
 }
