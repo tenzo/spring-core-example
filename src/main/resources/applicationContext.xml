@@ -9,7 +9,8 @@
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
     <bean id="helloWorldService"
-          class="pl.sdacademy.spring.beans.HelloWorldService">
+          class="pl.sdacademy.spring.beans.HelloWorldService" scope="singleton">
+          <!--class="pl.sdacademy.spring.beans.HelloWorldService" scope="prototype">-->
         <property name="name" value="Students" />
     </bean>
 </beans>
