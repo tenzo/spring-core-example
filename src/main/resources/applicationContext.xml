@@ -8,8 +8,21 @@
 
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
-    <bean id="helloWorldService"
-          class="pl.sdacademy.spring.beans.HelloWorldService">
-        <property name="name" value="Students" />
+    <bean id="repository"
+          class="pl.sdacademy.spring.beans.DummyUsersRepository">  <!-- autowire="byType"> -->
+         <property name="daoService" ref="dummyDao" />
     </bean>
+
+    <bean id="dummyDao"
+          class="pl.sdacademy.spring.beans.DummyDaoService" lazy-init="true">
+        <property name="dbAddress" value="localhost" />
+    </bean>
+
+    <bean id="userController"
+          class="pl.sdacademy.spring.beans.UserController">
+        <constructor-arg index="0" ref = "repository"/>
+        <constructor-arg index="1" type="java.lang.String" value="andrew12"/>
+    </bean>
+
+
 </beans>

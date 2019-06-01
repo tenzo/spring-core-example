@@ -2,7 +2,8 @@ package pl.sdacademy.spring.core;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.sdacademy.spring.beans.HelloWorldService;
+import pl.sdacademy.spring.beans.DummyUsersRepository;
+import pl.sdacademy.spring.beans.UserController;
 
 public class Main {
 
@@ -11,14 +12,10 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        HelloWorldService service = (HelloWorldService) context
-                .getBean("helloWorldService");
-        String message = service.sayHello();
-        System.out.println(message);
+        UserController controller =  context
+                .getBean("userController", UserController.class);
+        controller.getUser();
 
-        service.setName("Spring");
-        message = service.sayHello();
-        System.out.println(message);
     }
 
 }
