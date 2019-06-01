@@ -8,8 +8,12 @@
 
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
-    <bean id="helloWorldService"
-          class="pl.sdacademy.spring.beans.HelloWorldService">
-        <property name="name" value="Students" />
+    <bean id="userRepository"
+          class="pl.sdacademy.spring.beans.UserRepository">
+        <property name="userDao">
+            <bean id="userDao" class="pl.sdacademy.spring.beans.UserDao">
+                <property name="dbAddress" value="localhost"/>
+            </bean>
+        </property>
     </bean>
 </beans>
