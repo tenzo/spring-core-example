@@ -4,7 +4,10 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
-public class HelloWorldService implements DisposableBean, InitializingBean { //this is not recommended...
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class HelloWorldService3 {
 
     private String name;
 
@@ -16,11 +19,13 @@ public class HelloWorldService implements DisposableBean, InitializingBean { //t
         return "Hello! " + name;
     }
 
+    @PreDestroy
     public void destroy() throws Exception {
         System.out.println("Sorry " + name + ", destroing your bean ;(");
     }
 
-    public void afterPropertiesSet() throws Exception {
+    @PostConstruct
+    public void init() throws Exception {
         System.out.println("Good news " + name + ", just created your bean!");
     }
 }

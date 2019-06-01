@@ -10,6 +10,23 @@
 
     <bean id="helloWorldService"
           class="pl.sdacademy.spring.beans.HelloWorldService">
-        <property name="name" value="Students" />
+        <property name="name" value="service1" />
+    </bean>
+
+    <bean id="helloWorldService2"
+          class="pl.sdacademy.spring.beans.HelloWorldService2"
+          init-method="init" destroy-method="destroy">
+        <property name="name" value="service2" />
+    </bean>
+
+
+    <bean id="helloWorldService3"
+          class="pl.sdacademy.spring.beans.HelloWorldService3">
+        <property name="name" value="service3" />
+    </bean>
+
+    <bean id="helloWorldService4"
+          class="pl.sdacademy.spring.beans.HelloWorldService4">
+        <property name="name" value="service4" />
     </bean>
 </beans>
