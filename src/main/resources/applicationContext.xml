@@ -29,4 +29,6 @@
           class="pl.sdacademy.spring.beans.HelloWorldService4">
         <property name="name" value="service4" />
     </bean>
+
+    <bean class = "pl.sdacademy.spring.beans.HelloPostProcessor"/>
 </beans>
