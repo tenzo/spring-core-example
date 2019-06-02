@@ -16,7 +16,7 @@ public class HelloWorldService2 {
         return "Hello! " + name;
     }
 
-    public void destroy() throws Exception {
+    public void destroyAll() throws Exception {
         System.out.println("Sorry " + name + ", destroing your bean ;(");
     }
 

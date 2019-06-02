@@ -15,7 +15,7 @@
 
     <bean id="helloWorldService2"
           class="pl.sdacademy.spring.beans.HelloWorldService2"
-          init-method="init" destroy-method="destroy">
+          init-method="init" destroy-method="destroyAll" lazy-init="true">
         <property name="name" value="service2" />
     </bean>
 
@@ -28,6 +28,10 @@
     <bean id="helloWorldService4"
           class="pl.sdacademy.spring.beans.HelloWorldService4">
         <property name="name" value="service4" />
+    </bean>
+
+    <bean class="pl.sdacademy.spring.beans.UserService" destroy-method="destroy" lazy-init="true">
+
     </bean>
 
     <bean class = "pl.sdacademy.spring.beans.HelloPostProcessor"/>

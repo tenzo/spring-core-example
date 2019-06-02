@@ -13,21 +13,21 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        HelloWorldService service = (HelloWorldService) context
+        HelloWorldService service = context
                 .getBean("helloWorldService", HelloWorldService.class);
         String message = service.sayHello();
         System.out.println(message);
 
 
-        HelloWorldService2 service2 = context
-                .getBean("helloWorldService2", HelloWorldService2.class);
-        message = service2.sayHello();
-        System.out.println(message);
-
-        HelloWorldService3 service3 = context
-                .getBean("helloWorldService3", HelloWorldService3.class);
-        message = service3.sayHello();
-        System.out.println(message);
+//        HelloWorldService2 service2 = context
+//                .getBean("helloWorldService2", HelloWorldService2.class);
+//        message = service2.sayHello();
+//        System.out.println(message);
+//
+//        HelloWorldService3 service3 = context
+//                .getBean("helloWorldService3", HelloWorldService3.class);
+//        message = service3.sayHello();
+//        System.out.println(message);
 
 
 

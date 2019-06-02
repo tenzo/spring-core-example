@@ -13,6 +13,11 @@ public class HelloPostProcessor implements BeanPostProcessor {
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("Postprocessing bean after init: " + beanName);
+        if (bean instanceof HelloWorldService) {
+            ((HelloWorldService) bean).setName("hehehe");
+//            HelloWorldService service = (HelloWorldService) bean;
+//            service.setName("hehe");
+        }
         return bean;
     }
 
