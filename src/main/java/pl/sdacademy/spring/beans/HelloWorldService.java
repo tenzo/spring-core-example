@@ -2,7 +2,6 @@ package pl.sdacademy.spring.beans;
 
 import org.springframework.stereotype.Service;
 
-@Service("helloWorldService")
 public class HelloWorldService {
 
     private String name;

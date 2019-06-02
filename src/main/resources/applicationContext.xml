@@ -12,4 +12,14 @@
           class="pl.sdacademy.spring.beans.HelloWorldService">
         <property name="name" value="Students" />
     </bean>
+
+    <bean id="myHelloService"
+          class="pl.sdacademy.spring.beans.HelloWorldService">
+        <property name="name" value="World" />
+    </bean>
+
+    <bean id="marcinUser" class="pl.sdacademy.spring.beans.User">
+        <property name="name" value="Marcin"/>
+        <property name="email" value="marcin@example.com"/>
+    </bean>
 </beans>
