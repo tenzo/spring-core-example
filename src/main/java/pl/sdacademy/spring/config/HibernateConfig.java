@@ -32,10 +32,10 @@ public class HibernateConfig {
     @Bean
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:mem:db;DB_CLOSE_DELAY=-1");
-        dataSource.setUsername("sa");
-        dataSource.setPassword("sa");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/users");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
 
         return dataSource;
     }
@@ -53,7 +53,7 @@ public class HibernateConfig {
         hibernateProperties.setProperty(
                 "hibernate.hbm2ddl.auto", "create-drop");
         hibernateProperties.setProperty(
-                "hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+                "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 
         return hibernateProperties;
     }
