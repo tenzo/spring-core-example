@@ -14,7 +14,7 @@
     </bean>
 
     <bean id="dummyDao"
-          class="pl.sdacademy.spring.beans.DummyDaoService" lazy-init="true">
+          class="pl.sdacademy.spring.beans.DummyDaoService" lazy-init="true" init-method="init">
         <property name="dbAddress" value="localhost" />
     </bean>
 
@@ -23,6 +23,15 @@
         <constructor-arg index="0" ref = "repository"/>
         <constructor-arg index="1" type="java.lang.String" value="andrew12"/>
     </bean>
+
+    <bean id="userView"
+          class="pl.sdacademy.spring.beans.UserView">
+        <constructor-arg index="0" ref="userController"/>
+        <constructor-arg index="1" value="20"/>
+    </bean>
+
+    <!-- Utwórz bean UserView z polami typu UserController i userId (typu Long). Zainicjuj odpowiednim beanem i wartością
+         Użyj constructor-arg -->
 
 
 </beans>

@@ -10,8 +10,13 @@ public class UserController {
         this.username = username;
     }
 
+    public UserController(DummyUsersRepository repository) {
+        this.usersRepository = repository;
+        this.username = "pikachu90";
+    }
+
     public void getUser() {
-        System.out.println("UserController - getting user entity");
+        System.out.println("UserController - getting user entity for " + username);
         String user = usersRepository.getUser(username.hashCode());
         System.out.println("UserController - returning user " + user);
     }
