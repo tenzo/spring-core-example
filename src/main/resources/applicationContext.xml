@@ -8,6 +8,23 @@
 
     <context:component-scan base-package="pl.sdacademy.spring.beans" />
 
+    <bean id="maciekUser" class="pl.sdacademy.spring.beans.User">
+        <constructor-arg index="0" value="maciek"/>
+        <constructor-arg index="1" value="maciek@example.com"/>
+    </bean>
+
+    <bean id="weronikaUser" class="pl.sdacademy.spring.beans.User">
+        <constructor-arg index="0" value="weronika"/>
+        <constructor-arg index="1" value="weronika@example.com"/>
+    </bean>
+
+    <bean id="springProject" class="pl.sdacademy.spring.beans.Project">
+        <constructor-arg index="0" value="Spring Project"/>
+    </bean>
+    <bean id="oldJavaOneSixProject" class="pl.sdacademy.spring.beans.Project">
+        <constructor-arg index="0" value="Old java 1.6 project"/>
+    </bean>
+
     <bean id="collectionBean"
           class="pl.sdacademy.spring.beans.CollectionsBean">
         <property name = "names">
@@ -15,6 +32,13 @@
                 <value>Paul</value>
                 <value>Jessica</value>
                 <value>Philip</value>
+            </list>
+        </property>
+
+        <property name="projects">
+            <list>
+                <ref bean="springProject"/>
+                <ref bean="oldJavaOneSixProject"/>
             </list>
         </property>
 
@@ -29,10 +53,8 @@
 
         <property name = "scores">
             <map>
-                <entry key = "admin9" value = "0"/>
-                <entry key = "prokox" value = "99"/>
-                <entry key = "john32" value = "12"/>
-                <entry key = "eliza77" value = "78"/>
+                <entry key-ref = "maciekUser" value = "0"/>
+                <entry key-ref = "weronikaUser" value = "99"/>
             </map>
         </property>
     </bean>
