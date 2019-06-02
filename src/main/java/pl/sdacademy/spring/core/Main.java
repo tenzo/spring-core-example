@@ -22,6 +22,32 @@ public class Main {
         service.save(user1);
 
         System.out.println(service.list());
+
+        /*
+        Utwórz:
+            - serwis obsługujący odczytywanie userów (imię, email) z konsoli
+            - serwis obsługujący menu
+                - dodawanie userów do bazy
+                - wyświetlanie wszystkich userów
+            - w mainie pobierz bean MenuService i uruchom metodę start()
+         */
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
